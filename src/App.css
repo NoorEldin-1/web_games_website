@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Piedra&family=Sigmar&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Wendy+One&display=swap");
+@import "tailwindcss";
+.one {
+  width: 176px;
+  height: 20px;
+  background-color: black;
+  clip-path: inset(78% 0 5% 0);
+  transform: translate(0px, 315px);
+}
+.two {
+  width: 88px;
+  height: 290px;
+  background-color: black;
+  clip-path: inset(0% 96% 0% -11%);
+  transform: translate(10px, 22px);
+}
+.three {
+  width: 166px;
+  height: 90px;
+  background-color: black;
+  clip-path: inset(0 0 95% 0);
+  transform: translate(10px, -270px);
+}
+.four {
+  width: 100px;
+  height: 75px;
+  background-color: black;
+  clip-path: inset(0 48% 46% 48%);
+  transform: translate(124px, -357px);
+}
+.the-body {
+  position: relative;
+}
+.head {
+  width: 80px;
+  height: 80px;
+  border: 5px solid black;
+  transform: translate(133px, -392px);
+  border-radius: 50%;
+  position: absolute;
+}
+.body {
+  width: 4px;
+  height: 120px;
+  background-color: black;
+  transform: translate(172px, -315px);
+  position: absolute;
+}
+.arm-right {
+  width: 4px;
+  height: 60px;
+  background-color: black;
+  transform: translate(151px, -312px) rotate(46deg);
+  position: absolute;
+}
+.arm-left {
+  width: 4px;
+  height: 60px;
+  background-color: black;
+  transform: translate(193px, -312px) rotate(-46deg);
+  position: absolute;
+}
+.leg-right {
+  width: 4px;
+  height: 60px;
+  background-color: black;
+  transform: translate(151px, -209px) rotate(46deg);
+  position: absolute;
+}
+.leg-left {
+  width: 4px;
+  height: 60px;
+  background-color: black;
+  transform: translate(191px, -206px) rotate(-40deg);
+  position: absolute;
+}
+.the-word > p {
+  position: relative;
+  width: 19px;
+  height: 32px;
+  /* color: transparent; */
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+  }
+}
+.colors-keys {
+  > div {
+    position: relative;
+    padding-left: 30px;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 50%;
+      transform: translateY(50%);
+      left: 5px;
+      width: 15px;
+      height: 15px;
+    }
+  }
+  > div:nth-child(1)::after {
+    background-color: #ff9800;
+  }
+  > div:nth-child(2)::after {
+    background-color: #009688;
+  }
+  > div:nth-child(3)::after {
+    background-color: rgb(40, 40, 40);
+  }
+}
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.inputs-container > div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  span {
+    color: oklch(0.577 0.245 27.325);
+    font-size: 25px;
+    width: 65px;
+  }
+  > div {
+    justify-self: end;
+    display: flex;
+    gap: 10px;
+    input {
+      background-color: white;
+      width: 70px;
+      height: 70px;
+      border: none;
+      border-bottom: 4px solid oklch(0.577 0.245 27.325);
+      font-size: 45px;
+      text-align: center;
+      text-transform: uppercase;
+      &.match {
+        background-color: #ff9800 !important;
+      }
+      &.not-place {
+        background-color: #009688 !important;
+      }
+      &.not-match {
+        background-color: rgb(40, 40, 40) !important;
+        color: white !important;
+      }
+    }
+  }
+}
+.disabled-row {
+  > span {
+    color: oklch(0.38 0.16 26.89) !important;
+  }
+  > div input {
+    background-color: gray !important;
+    border-bottom: 4px solid gray !important;
+  }
+}
+@media (max-width: 767px) {
+  .inputs-container > div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    span {
+      color: oklch(0.577 0.245 27.325);
+      font-size: 16px;
+      width: 45px;
+    }
+    > div {
+      display: flex;
+      gap: 10px;
+      input {
+        background-color: white;
+        width: 35px;
+        height: 35px;
+        border: none;
+        border-bottom: 4px solid oklch(0.577 0.245 27.325);
+        font-size: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        &.match {
+          background-color: #ff9800 !important;
+        }
+        &.not-place {
+          background-color: #009688 !important;
+        }
+        &.not-match {
+          background-color: rgb(40, 40, 40) !important;
+          color: white !important;
+        }
+      }
+    }
+  }
+}
